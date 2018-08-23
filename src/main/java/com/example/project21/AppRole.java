@@ -1,7 +1,4 @@
-package com.example.project20;
-
-import org.apache.catalina.User;
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
+package com.example.project21;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -13,7 +10,7 @@ public class AppRole {
     private long id;
 
     @Column(unique=true)
-    private String role;
+    private String appRole;
 
     @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
     private Collection<AppUser> appUsers;
@@ -27,11 +24,11 @@ public class AppRole {
     }
 
     public String getRole() {
-        return role;
+        return appRole;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRole(String appRole) {
+        this.appRole = appRole;
     }
 
     public Collection<AppUser> getAppUsers() {

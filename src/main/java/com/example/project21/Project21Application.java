@@ -1,12 +1,12 @@
-package com.example.project20;
+package com.example.project21;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Project20Application {
+public class Project21Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Project20Application.class, args);
+		SpringApplication.run(Project21Application.class, args);
 	}
 }

@@ -1,4 +1,4 @@
-package com.example.project20;
+package com.example.project21;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -38,10 +38,13 @@ public class AppUser {
     inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<AppRole> roles;
 
+//    public String getPassword(){
+//        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//        String hashedPassword = passwordEncoder.encode(password);
+//        this.password =hashedPassword;
+//        return password;
+//    }
     public String getPassword(){
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String hashedPassword = passwordEncoder.encode(password);
-        this.password =hashedPassword;
         return password;
     }
 
