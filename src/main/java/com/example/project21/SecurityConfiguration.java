@@ -56,6 +56,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 //      auth.inMemoryAuthentication().withUser("dave").password(encoder().encode("password")).authorities("ADMIN");
       auth.userDetailsService(userDetailsServiceBean()).passwordEncoder(encoder());
+
         }
 
 

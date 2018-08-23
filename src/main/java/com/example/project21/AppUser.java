@@ -15,6 +15,15 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    public AppUser(String email, String password, String firstName, String lastName, boolean enabled, String userName) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.enabled = enabled;
+        this.userName = userName;
+    }
+
     @Column(name = "email", nullable = false)
     private String email;
 
@@ -38,7 +47,10 @@ public class AppUser {
     inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<AppRole> roles;
 
-//    public String getPassword(){
+    public AppUser() {
+    }
+
+    //    public String getPassword(){
 //        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 //        String hashedPassword = passwordEncoder.encode(password);
 //        this.password =hashedPassword;
@@ -65,7 +77,7 @@ public class AppUser {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = new BCryptPasswordEncoder().encode(password);
     }
 
     public String getFirstName() {

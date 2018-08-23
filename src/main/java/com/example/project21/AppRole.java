@@ -15,6 +15,14 @@ public class AppRole {
     @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
     private Collection<AppUser> appUsers;
 
+
+    public AppRole(String appRole) {
+        this.appRole = appRole;
+    }
+
+    public AppRole() {
+    }
+
     public long getId() {
         return id;
     }
@@ -23,11 +31,11 @@ public class AppRole {
         this.id = id;
     }
 
-    public String getRole() {
+    public String getAppRole() {
         return appRole;
     }
 
-    public void setRole(String appRole) {
+    public void setAppRole(String appRole) {
         this.appRole = appRole;
     }
 
