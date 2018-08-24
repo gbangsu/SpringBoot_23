@@ -77,7 +77,7 @@ public class AppUser {
     }
 
     public void setPassword(String password) {
-        this.password = new BCryptPasswordEncoder().encode(password);
+        this.password = password;
     }
 
     public String getFirstName() {
